@@ -1,0 +1,208 @@
+/*-------------------*/
+// ## Reset
+/*-------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/*-------------------*/
+// ## Utility
+/*-------------------*/
+.u-cf::after,
+.u-cf::before {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+}
+/*-------------------*/
+// ## Color
+/*-------------------*/
+$color--red: hsl(0, 78%, 62%);
+$color--cyan: hsl(180, 62%, 55%);
+$color--orange: hsl(34, 97%, 64%);
+$color--blue: hsl(212, 86%, 64%);
+$color--blue-veryDark: hsl(234, 12%, 34%);
+$color--blue-grayish: hsl(229, 6%, 66%);
+$color--gray--veryLight: hsl(0, 0%, 98%);
+
+/*-------------------*/
+// ## Typography
+/*-------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif, Helvetica, Arial;
+  font-size: 15px;
+}
+h1 {
+  font-size: 60px;
+  line-height: 80px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+h2 {
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+h3 {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+h4 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 600;
+}
+h5 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+}
+h6 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+}
+p {
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+  color: $color--blue-grayish;
+}
+/*-------------------*/
+// ## Mixin
+/*-------------------*/
+
+@mixin card($color) {
+  background-color: $color--gray--veryLight;
+  width: 100%;
+  max-width: 400px;
+  padding: 32px;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  border-top: 5px solid $color;
+  box-shadow: 0 5px 20px rgba($color--blue-veryDark, 0.3);
+  transition: 0.2s;
+  &:hover {
+    transform: translate(-8px, -3px);
+    box-shadow: 0 1px 10px rgba($color--blue-veryDark, 0.4);
+  }
+}
+
+/*-------------------*/
+// ## Global
+/*-------------------*/
+body {
+  background-color: #fff;
+}
+.container {
+  width: 100%;
+  padding: 0 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 544px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 736px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1168px;
+  }
+}
+
+/*-------------------*/
+// ## Components
+/*-------------------*/
+.intro {
+  display: block;
+  padding: 80px 0;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+
+  h3 {
+    font-size: 24px;
+    line-height: 1.2em;
+    &.title {
+      font-weight: 200;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+// Cards
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    gap: 32px;
+    .card-left,
+    .card-mid,
+    .card-right {
+      flex: 1;
+    }
+    [class^="card"] {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.card1 {
+  @include card($color--cyan);
+}
+.card2 {
+  @include card($color--red);
+}
+.card3 {
+  @include card($color--orange);
+}
+.card4 {
+  @include card($color--blue);
+}
+.card-intro {
+  h4 {
+    font-size: 20px;
+  }
+  img {
+    margin-top: 32px;
+    float: right;
+  }
+}
+// Footer
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}

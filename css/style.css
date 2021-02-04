@@ -158,7 +158,6 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 32px;
   }
   .cards .card-left,
   .cards .card-mid,
@@ -166,6 +165,7 @@ body {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    margin:24px;
   }
   .cards [class^="card"] {
     margin-bottom: 32px;

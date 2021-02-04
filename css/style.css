@@ -169,6 +169,7 @@ body {
   }
   .cards [class^="card"] {
     margin-bottom: 32px;
+    padding:48px;
   }
 }
 

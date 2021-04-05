@@ -167,10 +167,6 @@ body {
             flex: 1;
     margin:24px;
   }
-  .cards [class^="card"] {
-    margin-bottom: 32px;
-    padding:48px;
-  }
 }
 
 .card1 {
